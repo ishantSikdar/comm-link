@@ -33,7 +33,7 @@
 
             try {
                 apiResponse.setData(recentActivityService.processRecentActivityRetrieval());
-                apiResponse.setMessage("Saved Project");
+                apiResponse.setDetail("Fetched Nearby Projects");
                 apiResponse.setStatus(APIConstants.STATUS_SUCCESS);
                 apiResponse.setHttpStatus(HttpStatus.OK);
                 log.info(LogConstants.LOG_ROUTE_API_STAT, apiResponse.getRequestId(), apiResponse.getStatus(), ENDPOINT);

@@ -39,7 +39,7 @@ public class SignInController {
 
         try {
             apiResponse.setData(loginService.processLogin(loginRequest));
-            apiResponse.setMessage("Login Success");
+            apiResponse.setDetail("Login Success");
             apiResponse.setStatus(APIConstants.STATUS_SUCCESS);
             apiResponse.setHttpStatus(HttpStatus.OK);
             log.info(LogConstants.LOG_ROUTE_API_STAT, apiResponse.getRequestId(), apiResponse.getStatus(), ENDPOINT);
