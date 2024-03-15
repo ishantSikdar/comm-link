@@ -42,6 +42,9 @@ public class DBService {
     public List<Project> findAllProjects() {
         return projectRepository.findAll();
     }
+    public List<User> findAllOrganisations() {
+        return userRepository.findAllOrganisations("organization");
+    }
 
     public Project saveProject(Project project) {
         try {
@@ -51,5 +54,7 @@ public class DBService {
             return null;
         }
     }
+
+
 
 }

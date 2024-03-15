@@ -4,7 +4,7 @@
     import com.ctrlcreate.commlink.constant.LogConstants;
     import com.ctrlcreate.commlink.dto.api.ApiResponse;
     import com.ctrlcreate.commlink.service.ErrorResponseService;
-    import com.ctrlcreate.commlink.service.RecentActivityService;
+    import com.ctrlcreate.commlink.service.NearbyProjectsService;
     import com.ctrlcreate.commlink.util.IDUtil;
     import com.ctrlcreate.commlink.util.TimeUtil;
     import lombok.RequiredArgsConstructor;
@@ -24,7 +24,7 @@
     @RequestMapping(path = APIConstants.API_FE_ROOT_URI_1)
     public class RecentProjectsController {
 
-        private final RecentActivityService recentActivityService;
+        private final NearbyProjectsService nearbyProjectsService;
         private static final String ENDPOINT = APIConstants.URI_PROJECTS;
         @GetMapping(value = ENDPOINT)
         public ResponseEntity<ApiResponse<List<?>>> getRecentActivity() {
@@ -32,7 +32,7 @@
             apiResponse.setRequestId(IDUtil.generateRequestId());
 
             try {
-                apiResponse.setData(recentActivityService.processRecentActivityRetrieval());
+                apiResponse.setData(nearbyProjectsService.processRecentActivityRetrieval());
                 apiResponse.setDetail("Fetched Nearby Projects");
                 apiResponse.setStatus(APIConstants.STATUS_SUCCESS);
                 apiResponse.setHttpStatus(HttpStatus.OK);

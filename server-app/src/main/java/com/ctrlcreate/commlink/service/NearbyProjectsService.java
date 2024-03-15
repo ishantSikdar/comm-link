@@ -15,7 +15,7 @@ import java.util.List;
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class RecentActivityService {
+public class NearbyProjectsService {
 
     private final DBService dbService;
 

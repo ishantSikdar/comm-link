@@ -3,10 +3,12 @@ package com.ctrlcreate.commlink.model.user;
 import com.ctrlcreate.commlink.constant.DBConstants;
 import com.ctrlcreate.commlink.dto.others.Coordinates;
 import com.ctrlcreate.commlink.model.user.pojo.Profile;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -33,6 +35,10 @@ public class User implements UserDetails {
     private Instant lastLoginAt;
     private Instant createdAt;
     private Instant updatedAt;
+
+    @JsonIgnore
+    @Transient
+    private Double distanceFromUser;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

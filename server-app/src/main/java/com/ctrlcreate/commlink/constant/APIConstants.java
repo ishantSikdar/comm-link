@@ -10,6 +10,7 @@ public class APIConstants {
     public static final String URI_MY_PAGE = "/myPage";
     public static final String URI_SAVE_COORDS = "/getCoordinates";
     public static final String URI_PROJECTS = "/projects";
+    public static final String URI_ORGANIZATIONS = "/organizations";
 
 
 }
